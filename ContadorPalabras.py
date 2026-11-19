@@ -29,12 +29,14 @@ class ContadorPalabras(QtWidgets.QMainWindow):
             totalCaracteres += len(palabra)
         totalCaracteres
         self.tvCaracteres.setText(f"Caracteres: {totalCaracteres}")
+        #condicionar la alerta
+        if cantidadPalabras >= 20: 
+         self.tvCaracteres.setStyleSheet("background-color: ; color: #ff0000;")
+        else:
+            self.tvCaracteres.setStyleSheet("background-color: ; color: #00000;")
+        if totalCaracteres >= 120:
+            self.tvCaracteres.setStyleSheet("background-color: ; color: #ff0000;")
 
-
-
-
-
-        print("Se ha pulsado el boton")
         
 app = QtWidgets.QApplication(sys.argv)
 ventana = ContadorPalabras()
